@@ -1,0 +1,130 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1a1a1a, #2b1a3d);
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+}
+h1 {
+    font-size: 2.5em;
+    background: linear-gradient(45deg, #8a4af3, #00ddeb);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+.menu {
+    text-align: right;
+}
+.menu a {
+    color: #00ddeb;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 20px;
+}
+.menu a:hover {
+    color: #8a4af3;
+}
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 한 줄에 2개씩 */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.post {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(138, 74, 243, 0.4);
+}
+.post img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.post h3 {
+    margin: 10px 0;
+    color: #e0e0e0;
+    font-size: 1.1em;
+}
+.post p {
+    font-size: 0.9em;
+    color: #b0b0b0;
+    margin: 5px 0;
+}
+.like-btn {
+    background: linear-gradient(45deg, #8a4af3, #00ddeb);
+    border: none;
+    padding: 8px 15px;
+    color: white;
+    cursor: pointer;
+    border-radius: 20px;
+    font-size: 0.9em;
+    transition: opacity 0.3s;
+}
+.like-btn:hover {
+    opacity: 0.8;
+}
+.more-btn {
+    display: block;
+    background: linear-gradient(45deg, #8a4af3, #00ddeb);
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+    border-radius: 20px;
+    font-size: 1em;
+    margin: 40px auto;
+    text-align: center;
+    max-width: 200px;
+}
+.more-btn:hover {
+    opacity: 0.8;
+}
+.news-section {
+    max-width: 1200px;
+    margin: 40px auto;
+}
+.news-section h2 {
+    background: linear-gradient(45deg, #8a4af3, #00ddeb);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+.news-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+.post-form {
+    max-width: 1200px;
+    margin: 20px auto;
+    text-align: center;
+}
+.post-form input {
+    margin: 5px;
+    padding: 5px;
+}
+.post-form button {
+    background: linear-gradient(45deg, #8a4af3, #00ddeb);
+    border: none;
+    padding: 8px 15px;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.post-form button:hover {
+    opacity: 0.8;
+}

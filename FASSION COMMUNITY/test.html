@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FCS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="패션 커뮤니티 홈.css">
+</head>
+<body>
+    <div class="header">
+        <h1>FCS</h1>
+        <div class="menu">
+            <a href="내 정보페이지.html">내 프로필</a>
+        </div>
+    </div>
+
+    <!-- 글 작성 폼 -->
+    <div class="post-form">
+        <input type="text" id="post-title" placeholder="제목 입력">
+        <input type="text" id="post-content" placeholder="내용 입력">
+        <input type="file" id="post-image" accept="image/*">
+        <button onclick="addPost()">게시물 추가</button>
+    </div>
+
+    <div class="container">
+        <!-- 여기에 동적으로 게시물 추가됨 -->
+    </div>
+
+    <button class="more-btn">더 보기</button>
+
+    <div class="news-section">
+        <h2>패션뉴스</h2>
+        <div class="news-item">
+            <h3>2025 봄 시즌</h3>
+            <p>파스텔 톤과 오버사이즈가 대세!</p>
+        </div>
+    </div>
+
+    <script>
+        function addPost() {
+            const title = document.getElementById('post-title').value;
+            const content = document.getElementById('post-content').value;
+            const image = document.getElementById('post-image').files[0];
+
+            const container = document.querySelector('.container');
+            const newPost = document.createElement('div');
+            newPost.className = 'post';
+
+            if (image) {
+                const img = document.createElement('img');
+                img.src = URL.createObjectURL(image);
+                newPost.appendChild(img);
+            }
+            const h3 = document.createElement('h3');
+            h3.textContent = title;
+            newPost.appendChild(h3);
+
+            const p = document.createElement('p');
+            p.textContent = content;
+            newPost.appendChild(p);
+
+            const button = document.createElement('button');
+            button.className = 'like-btn';
+            button.innerHTML = '좋아요 <span>0</span>';
+            button.onclick = function() { likePost(this); };
+            newPost.appendChild(button);
+
+            container.appendChild(newPost);
+
+            // 입력창 초기화
+            document.getElementById('post-title').value = '';
+            document.getElementById('post-content').value = '';
+            document.getElementById('post-image').value = '';
+        }
+
+        function likePost(button) {
+            let count = parseInt(button.querySelector('span').textContent);
+            count++;
+            button.querySelector('span').textContent = count;
+        }
+    </script>
+</body>
+</html>
